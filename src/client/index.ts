@@ -8,7 +8,7 @@ const socket = io(`${ ApplicationSettings.HOSTNAME }:${ ApplicationSettings.SOCK
 });
 
 socket.on(ApplicationSignals.CLIENT_CONNECTED, () => {
-    Logger.debug(`SIGNAL>  CLIENT_CONNECTED\n`);
+    Logger.debug(`SIGNAL>  CLIENT_CONNECTED TO ${ socket.id } \n`);
 
     socket.emit(ApplicationSignals.CUSTOMER_CONNECTED, { time: Date.now(), uuid: "b09b14fdb2052e4cbf849222ad41e6ed" }, (data) => {
         console.log(data);
