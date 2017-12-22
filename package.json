@@ -1,0 +1,41 @@
+{
+  "name": "localrts",
+  "version": "1.0.0",
+  "description": "",
+  "scripts": {
+    "build": "tsc",
+    "watch": "tsc --watch",
+    "start:dev": "tsc --watch & nodemon dist",
+    "test": "tsc && mocha dist/**/*.spec.js"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "dependencies": {
+    "@types/node": "7.0.22",
+    "@types/socket.io": "^1.4.31",
+    "express": "^4.16.2",
+    "mongoose": "^4.13.7",
+    "nodemon": "1.11.0",
+    "socket.io": "^2.0.4",
+    "socket.io-client": "^2.0.4",
+    "winston": "^2.4.0"
+  },
+  "devDependencies": {
+    "@types/mocha": "2.2.41",
+    "@types/mongodb": "^2.2.18",
+    "@types/mongoose": "^4.7.30",
+    "@types/node": "^7.0.22",
+    "@types/socket.io-client": "^1.4.32",
+    "@types/winston": "^2.3.7",
+    "eslint": "latest",
+    "eslint-config-airbnb-base": "latest",
+    "eslint-plugin-import": "latest",
+    "eslint-plugin-promise": "latest",
+    "mocha": "latest",
+    "supertest": "3.0.0",
+    "tsc": "latest",
+    "typescript": "latest",
+    "typescript-eslint-parser": "latest"
+  }
+}
