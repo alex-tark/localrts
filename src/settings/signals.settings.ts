@@ -1,6 +1,6 @@
-export class ApplicationSignals {
+export class SignalTypes {
     public static INSTANCE_CONNECTED = <any>'INSTANCE_CONNECTED';
-    public static INSTANCE_LOGUT     = <any>'INSTANCE_LOGUT';
+    public static INSTANCE_LOGOUT    = <any>'INSTANCE_LOGOUT';
     public static INSTANCE_MESSAGE   = <any>'INSTANCE_MESSAGE';
     public static INSTANCE_TIMEOUT   = <any>'INSTANCE_TIMEOUT';
 

@@ -1,27 +1,28 @@
+import { ApplicationSettings } from '../settings/application.settings';
+import { Logger }              from './../utils/log.utils';
 import * as http               from 'http';
 import * as IO                 from 'socket.io';
 import app                     from './app.base';
-import { ApplicationSettings } from '../settings/application.settings';
-import { Logger }              from './../utils/log.utils';
 
-class AppLevel {
-    public schema: any;
+class ApplicationBase {
+    public io      : SocketIO.Server;
+    public server  : any;
+    public location: string;
+    public port    : number;
 
     constructor() {
         let server = http.createServer(app);
-        let socket = IO.listen(server);
-        server.listen(ApplicationSettings.SOCKET_PORT);
+        this.io    = IO.listen(server);
+        server.listen(ApplicationSettings.PORT);
 
-        Logger.debug(`SERVER INITIALIZATION SUCCESS ON PORT ${ ApplicationSettings.SOCKET_PORT }`);
+        Logger.debug(`EXPRESS> SERVER INITIALIZATION SUCCESS AT ${ ApplicationSettings.PORT }\n`);
 
-        this.schema = {
-            io      : socket,
-            server  : server,
-            location: ApplicationSettings.HOSTNAME,
-            port    : ApplicationSettings.SOCKET_PORT
-        }
+        this.server   = server;
+        this.location = ApplicationSettings.HOSTNAME;
+        this.port     = ApplicationSettings.PORT;
     }
 }
 
-const ApplicationLevel = new AppLevel().schema;
-export default ApplicationLevel;
+const AppLevel = new ApplicationBase();
+
+export { AppLevel };

@@ -1,4 +1,4 @@
 export class ApplicationSettings {
-    public static HOSTNAME: string = "http://localhost"
-    public static SOCKET_PORT: number = 1337;
+    public static HOSTNAME: string = "https://localhost";
+    public static PORT    : number = 1337;
 }
