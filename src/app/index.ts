@@ -1,4 +1,5 @@
-import { ApplicationSettings } from '../settings/application.settings';
+import { ApplicationSettings } from './../settings/application.settings';
+
 import { Logger }              from './../utils/log.utils';
 import * as http               from 'http';
 import * as IO                 from 'socket.io';
